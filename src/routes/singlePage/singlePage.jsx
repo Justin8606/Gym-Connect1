@@ -123,10 +123,7 @@ function SinglePage() {
 
 
 
-          <p className='title'>Location:</p>
-          <div className="mapContainer">
-            <MapView items={[singlePostData]} />
-          </div>
+          
 
           <p className='title'>Rating:</p>
           <div className="ratingContainer">
@@ -162,6 +159,10 @@ function SinglePage() {
           <div className="paymentContainer">
             <button>Proceed to Payment</button>
             {/* You can add your payment logic here */}
+          </div>
+          <p className='title'>Location:</p>
+          <div className="mapContainer">
+            <MapView items={[singlePostData]} />
           </div>
         </div>
       </div>
