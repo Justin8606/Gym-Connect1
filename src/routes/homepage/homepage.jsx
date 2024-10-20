@@ -1,7 +1,15 @@
+import { useContext } from 'react'
 import SearchBar from '../../components/searchBar/SearchBar'
 import './homepage.scss'
+import { AuthContext } from '../../context/AuthContext'
+
 
 function Homepage(){
+
+const {currentUser} = useContext(AuthContext)
+
+console.log(currentUser)
+
   return (
     <div className='homepage'>
         <div className="textContainer">
