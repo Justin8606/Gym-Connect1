@@ -3,8 +3,9 @@ import Notifications from "../../components/notifications/Notifications"; // New
 import "./profilePage.scss";
 import apiRequest from "../../lib/apiRequest"
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function ProfilePage() {
 
@@ -12,11 +13,11 @@ function ProfilePage() {
 
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    if(!currentUser){
-      navigate("/login");
-    }
-  }, [currentUser, navigate])
+  // useEffect(()=>{
+  //   if(!currentUser){
+  //     navigate("/login");
+  //   }
+  // }, [currentUser, navigate])
 
 
   const handleLogout = async ()=>{
@@ -30,14 +31,15 @@ function ProfilePage() {
     }
   }
 
-  return (
-    currentUser && (<div className="profilePage">
+  return (<div className="profilePage">
       <div className="details">
         <div className="wrapper">
           {/* User Information Section */}
           <div className="title">
             <h1>User Information</h1>
+            <Link to="/profile/update">
             <button>Update Profile</button>
+            </Link>
           </div>
           <div className="info">
             <span>
@@ -77,7 +79,7 @@ function ProfilePage() {
         </div>
       </div>
     </div>
-    )
+    
   );
 }
 
